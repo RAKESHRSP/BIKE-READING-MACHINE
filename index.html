@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Digital Attendance</title>
+    <title>AI-Powered Attendance System</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <div class="container">
-        <h1>ADMAN SIGNATURE Attendance System</h1>
+        <h1>🤖 AI Digital Attendance System</h1>
 
         <!-- Real-time clock -->
-        <div id="clock" class="fade-in"></div>
+        <div id="clock"></div>
 
         <!-- User Details Form -->
         <div class="user-details">
@@ -21,7 +21,10 @@
             <input type="tel" id="phone" placeholder="Enter Phone Number">
             <input type="email" id="email" placeholder="Enter Email ID">
             
-            <button id="biometric-btn">🔍 Scan Fingerprint</button>
+            <label>Upload Fingerprint:</label>
+            <input type="file" id="fingerprint-upload" accept="image/*">
+            
+            <button id="biometric-btn">🔍 Submit Attendance</button>
         </div>
 
         <!-- Arrival Information -->
@@ -31,6 +34,7 @@
             <p><strong>Phone:</strong> <span id="user-phone"></span></p>
             <p><strong>Email:</strong> <span id="user-email"></span></p>
             <p><strong>Time:</strong> <span id="arrival-time"></span></p>
+            <img id="fingerprint-image" class="fingerprint-preview">
         </div>
 
         <!-- Bike KM Tracking -->
@@ -42,7 +46,7 @@
             <label>Stop KM:</label>
             <input type="number" id="stop-km" placeholder="Enter stop KM">
 
-            <button id="calculate-btn" onclick="calculateKM()">🚀 Calculate KM</button>
+            <button id="calculate-btn">🚀 Calculate KM</button>
             
             <p>Total Distance: <span id="total-km">0</span> KM</p>
         </div>
