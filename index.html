@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Digital Attendance</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>ADMAN SIGNATURE Attendance System</h1>
+
+        <!-- Real-time clock -->
+        <div id="clock" class="fade-in"></div>
+
+        <!-- User Details Form -->
+        <div class="user-details">
+            <h2>👤 Enter Your Details</h2>
+            <input type="text" id="name" placeholder="Enter Your Name">
+            <input type="tel" id="phone" placeholder="Enter Phone Number">
+            <input type="email" id="email" placeholder="Enter Email ID">
+            
+            <button id="biometric-btn">🔍 Scan Fingerprint</button>
+        </div>
+
+        <!-- Arrival Information -->
+        <div id="arrival-info" class="hidden">
+            <h3>✅ Attendance Recorded</h3>
+            <p><strong>Name:</strong> <span id="user-name"></span></p>
+            <p><strong>Phone:</strong> <span id="user-phone"></span></p>
+            <p><strong>Email:</strong> <span id="user-email"></span></p>
+            <p><strong>Time:</strong> <span id="arrival-time"></span></p>
+        </div>
+
+        <!-- Bike KM Tracking -->
+        <div class="km-tracker">
+            <h2>🏍️ Bike KM Tracker</h2>
+            <label>Start KM:</label>
+            <input type="number" id="start-km" placeholder="Enter start KM">
+            
+            <label>Stop KM:</label>
+            <input type="number" id="stop-km" placeholder="Enter stop KM">
+
+            <button id="calculate-btn" onclick="calculateKM()">🚀 Calculate KM</button>
+            
+            <p>Total Distance: <span id="total-km">0</span> KM</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
