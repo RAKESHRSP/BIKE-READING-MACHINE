@@ -3,55 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Powered Attendance System</title>
+    <title>Bike Riding Database</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+    <header class="header">
+        <h1 class="animated-title">BIKE RIDING DATABASE</h1>
+    </header>
     <div class="container">
-        <h1>🤖 AI Digital Attendance System</h1>
-
-        <!-- Real-time clock -->
-        <div id="clock"></div>
-
-        <!-- User Details Form -->
-        <div class="user-details">
-            <h2>👤 Enter Your Details</h2>
-            <input type="text" id="name" placeholder="Enter Your Name">
-            <input type="tel" id="phone" placeholder="Enter Phone Number">
-            <input type="email" id="email" placeholder="Enter Email ID">
-            
-            <label>Upload Fingerprint:</label>
-            <input type="file" id="fingerprint-upload" accept="image/*">
-            
-            <button id="biometric-btn">🔍 Submit Attendance</button>
+        <div id="employeeDetails" class="fade-in show">
+            <h2>Employee Details</h2>
+            <label for="employeeName">Name:</label>
+            <input type="text" id="employeeName" required>
+            <label for="employeePhone">Phone Number:</label>
+            <input type="tel" id="employeePhone" required>
+            <button id="nextBtn">Next</button>
         </div>
 
-        <!-- Arrival Information -->
-        <div id="arrival-info" class="hidden">
-            <h3>✅ Attendance Recorded</h3>
-            <p><strong>Name:</strong> <span id="user-name"></span></p>
-            <p><strong>Phone:</strong> <span id="user-phone"></span></p>
-            <p><strong>Email:</strong> <span id="user-email"></span></p>
-            <p><strong>Time:</strong> <span id="arrival-time"></span></p>
-            <img id="fingerprint-image" class="fingerprint-preview">
+        <div id="biometricSection" class="fade-in" style="display:none;">
+            <h2>Biometric Registration</h2>
+            <button id="registerBtn">Register Biometric Data</button>
+            <button id="loginBtn">Login with Biometric Data</button>
         </div>
 
-        <!-- Bike KM Tracking -->
-        <div class="km-tracker">
-            <h2>🏍️ Bike KM Tracker</h2>
-            <label>Start KM:</label>
-            <input type="number" id="start-km" placeholder="Enter start KM">
-            
-            <label>Stop KM:</label>
-            <input type="number" id="stop-km" placeholder="Enter stop KM">
-
-            <button id="calculate-btn">🚀 Calculate KM</button>
-            
-            <p>Total Distance: <span id="total-km">0</span> KM</p>
+        <div id="kmSection" class="fade-in" style="display:none;">
+            <h2>Kilometer Tracking</h2>
+            <label for="startKM">Start KM:</label>
+            <input type="number" id="startKM" required>
+            <label for="stopKM">Stop KM:</label>
+            <input type="number" id="stopKM" required>
+            <button id="calculateBtn">Calculate Distance</button>
+            <p id="result"></p>
+            <p id="timestamp"></p>
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Start KM</th>
+                        <th>Stop KM</th>
+                        <th>Distance (KM)</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be appended here -->
+                </tbody>
+            </table>
+            <button id="viewDataBtn">View Data</button>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
